@@ -24,7 +24,7 @@
   --space-8: 4rem;
   --space-9: 6rem;
 
-  --container-max: 1180px;
+  --container-max: 1280px;
   --container-padding: clamp(1rem, 4vw, 3rem);
   --border-subtle: 1px solid rgba(177, 138, 82, 0.32);
   --focus-ring: 0 0 0 3px rgba(229, 210, 173, 0.35);

@@ -5,6 +5,18 @@ import MediaPlaceholder from '../../components/ui/MediaPlaceholder.jsx';
 import './Home.css';
 
 const storyBeats = christianChukwu.assets.storyPreview;
+const apparelItems = christianChukwu.apparel.map((item) => {
+  const [tee, rest] = item.title.split(' - ');
+  const [lineOne, lineTwo] = rest.split(' / ');
+
+  return {
+    ...item,
+    tee,
+    lineOne,
+    lineTwo,
+  };
+});
+const featuredApparel = apparelItems[0];
 
 const futureLegends = [
   {
@@ -48,11 +60,7 @@ function Home() {
             src={christianChukwu.assets.hero.src}
             alt={christianChukwu.assets.hero.alt}
             loading="eager"
-            objectPosition="center 34%"
-          >
-            <strong>Legend {christianChukwu.legendNumber}</strong>
-            <b>No. {christianChukwu.number}</b>
-          </MediaPlaceholder>
+          />
         </div>
       </section>
 
@@ -148,25 +156,28 @@ function Home() {
         <HomeSectionHeader number="05" eyebrow="Wear the History" title="Wear the history." />
         <div className="apparel-preview__layout">
           <MediaPlaceholder
-            label="Concept collection lookbook artwork"
-            variant="lookbook"
-            src={christianChukwu.assets.collection.experience.src}
-            alt={christianChukwu.assets.collection.experience.alt}
+            label="TEE 01 concept shirt mockup"
+            variant="apparel-feature"
+            src={featuredApparel.image}
+            alt={featuredApparel.alt}
             objectPosition="center"
           />
           <div className="apparel-preview__items">
-            {christianChukwu.apparel.map((item) => {
-              const [tee, rest] = item.title.split(' - ');
-              const [lineOne, lineTwo] = rest.split(' / ');
-
-              return (
-                <article className="apparel-item" key={item.id}>
-                  <p>{tee}</p>
-                  <h3>{lineOne}</h3>
-                  <span>{lineTwo}</span>
-                </article>
-              );
-            })}
+            {apparelItems.map((item) => (
+              <article
+                className={item.id === 'tee-01' ? 'apparel-item apparel-item--active' : 'apparel-item'}
+                key={item.id}
+              >
+                {item.id !== 'tee-01' && item.image ? (
+                  <img src={item.image} alt={item.alt} loading="lazy" decoding="async" />
+                ) : null}
+                <div>
+                  <p>{item.tee}</p>
+                  <h3>{item.lineOne}</h3>
+                  <span>{item.lineTwo}</span>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
         <Link className="button-link" to="/legends/christian-chukwu/apparel">
@@ -178,7 +189,7 @@ function Home() {
         <HomeSectionHeader number="06" eyebrow="Collect the Legacy" title="Collect the legacy.">
           Five cards. Five chapters. One extraordinary life.
         </HomeSectionHeader>
-        <div className="cards-preview__deck" aria-label="Collection 001 card placeholders">
+        <div className="cards-preview__deck" aria-label="Collection 001 card previews">
           {christianChukwu.cards.map((card, index) => (
             <article className="collector-card" key={card.id} style={{ '--card-index': index }}>
               {card.front ? (
@@ -201,7 +212,6 @@ function Home() {
           Rangers Legends preserves the players, moments and memories that shaped the Pride of the
           East through comics, film, design and collectibles.
         </HomeSectionHeader>
-        <div className="mission-preview__rule" aria-hidden="true" />
       </section>
 
       <section className="future-legends section-shell section-rule" aria-labelledby="future-title">

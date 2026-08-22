@@ -1,15 +1,16 @@
-import heroChairmanMain from '../../assets/legends/christian-chukwu/hero/hero-chairman-main.png';
-import coverChairmanPenalty from '../../assets/legends/christian-chukwu/covers/cover-chairman-penalty.png';
-import comicPage01 from '../../assets/legends/christian-chukwu/comic/comic-page-01.png';
-import graphicChairman01 from '../../assets/legends/christian-chukwu/graphics/graphic-chairman-01.png';
-import graphicChampions03 from '../../assets/legends/christian-chukwu/graphics/graphic-champions-03.png';
-import collectionHeroMain from '../../assets/legends/christian-chukwu/collection/collection-hero-main.png';
-import collectionCollectorExperience from '../../assets/legends/christian-chukwu/collection/collection-collector-experience.png';
-import cardC01Front from '../../assets/legends/christian-chukwu/cards/card-c01-front.png';
-import cardC02Front from '../../assets/legends/christian-chukwu/cards/card-c02-front.png';
-import cardC03Front from '../../assets/legends/christian-chukwu/cards/card-c03-front.png';
-import cardC04Front from '../../assets/legends/christian-chukwu/cards/card-c04-front.png';
-import cardC05Front from '../../assets/legends/christian-chukwu/cards/card-c05-front.png';
+import coverChairmanPenalty from '../../assets/legends/christian-chukwu/optimized/story/cover-chairman-penalty-home.png';
+import comicPage01 from '../../assets/legends/christian-chukwu/optimized/story/comic-page-01-home.png';
+import graphicChairman01 from '../../assets/legends/christian-chukwu/optimized/graphics/graphic-chairman-01-home.png';
+import graphicChampions03 from '../../assets/legends/christian-chukwu/optimized/story/graphic-champions-03-home.png';
+import collectionHeroMain from '../../assets/legends/christian-chukwu/optimized/collection/collection-hero-main-home.png';
+import tee01Home from '../../assets/legends/christian-chukwu/optimized/apparel/tee-01-home.png';
+import tee02Home from '../../assets/legends/christian-chukwu/optimized/apparel/tee-02-home.png';
+import tee03Home from '../../assets/legends/christian-chukwu/optimized/apparel/tee-03-home.png';
+import cardC01Front from '../../assets/legends/christian-chukwu/optimized/cards/card-c01-front-home.png';
+import cardC02Front from '../../assets/legends/christian-chukwu/optimized/cards/card-c02-front-home.png';
+import cardC03Front from '../../assets/legends/christian-chukwu/optimized/cards/card-c03-front-home.png';
+import cardC04Front from '../../assets/legends/christian-chukwu/optimized/cards/card-c04-front-home.png';
+import cardC05Front from '../../assets/legends/christian-chukwu/optimized/cards/card-c05-front-home.png';
 
 const christianChukwu = {
   slug: 'christian-chukwu',
@@ -31,14 +32,14 @@ const christianChukwu = {
   years: null,
   collection: 'RANGERS LEGENDS 001',
   hero: {
-    image: heroChairmanMain,
+    image: graphicChairman01,
     alt: 'Christian Chukwu concept artwork for Rangers Legends 001',
     status: 'NEEDS CLEANUP',
   },
   assets: {
     hero: {
-      src: heroChairmanMain,
-      alt: 'Christian Chukwu concept artwork for Rangers Legends 001',
+      src: graphicChairman01,
+      alt: 'Christian Chukwu illustrated portrait concept artwork',
       status: 'NEEDS CLEANUP',
     },
     featured: {
@@ -94,7 +95,7 @@ const christianChukwu = {
         status: 'NEEDS CLEANUP',
       },
       experience: {
-        src: collectionCollectorExperience,
+        file: 'src/assets/legends/christian-chukwu/collection/collection-collector-experience.png',
         alt: 'Rangers Legends 001 collector experience concept artwork',
         status: 'NEEDS CLEANUP',
       },
@@ -175,9 +176,27 @@ const christianChukwu = {
     },
   ],
   apparel: [
-    { id: 'tee-01', title: 'TEE 01 - THE MAN / CHAIRMAN', image: null },
-    { id: 'tee-02', title: 'TEE 02 - THE MOMENT / KADUNA 1977', image: null },
-    { id: 'tee-03', title: 'TEE 03 - THE GLORY / AFRICAN CHAMPIONS', image: null },
+    {
+      id: 'tee-01',
+      title: 'TEE 01 - THE MAN / CHAIRMAN',
+      image: tee01Home,
+      alt: 'TEE 01 The Man Chairman concept shirt mockup',
+      status: 'NEEDS CLEANUP',
+    },
+    {
+      id: 'tee-02',
+      title: 'TEE 02 - THE MOMENT / KADUNA 1977',
+      image: tee02Home,
+      alt: 'TEE 02 The Moment Kaduna 1977 concept shirt mockup',
+      status: 'NEEDS CLEANUP',
+    },
+    {
+      id: 'tee-03',
+      title: 'TEE 03 - THE GLORY / AFRICAN CHAMPIONS',
+      image: tee03Home,
+      alt: 'TEE 03 The Glory African Champions concept shirt mockup',
+      status: 'NEEDS CLEANUP',
+    },
   ],
   cards: [
     {
