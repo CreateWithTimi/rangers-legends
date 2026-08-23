@@ -53,17 +53,18 @@ This manifest tracks approved or placeholder media so future work does not guess
 
 | Asset | File | Status | Used On | Notes |
 | --- | --- | --- | --- | --- |
-| C01 front | `src/assets/legends/christian-chukwu/cards/card-c01-front.png` | NEEDS CLEANUP | Home Cards Preview | Supplied concept artwork. Contains crest-like marks and embedded text. |
-| C01 front, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/cards/card-c01-front-home.png` | NEEDS CLEANUP | Home Cards Preview | Non-destructive resized PNG derivative for Home use. |
-| C02 front | `src/assets/legends/christian-chukwu/cards/card-c02-front.png` | NEEDS CLEANUP | Home Cards Preview | Supplied concept artwork. Contains crest-like marks and embedded text. |
-| C02 front, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/cards/card-c02-front-home.png` | NEEDS CLEANUP | Home Cards Preview | Non-destructive resized PNG derivative for Home use. |
-| C03 front | `src/assets/legends/christian-chukwu/cards/card-c03-front.png` | NEEDS CLEANUP | Home Cards Preview | Supplied concept artwork. Contains crest-like marks and embedded text. |
-| C03 front, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/cards/card-c03-front-home.png` | NEEDS CLEANUP | Home Cards Preview | Non-destructive resized PNG derivative for Home use. |
-| C04 front | `src/assets/legends/christian-chukwu/cards/card-c04-front.png` | NEEDS CLEANUP | Home Cards Preview | Supplied concept artwork. Contains crest-like marks and embedded text. |
-| C04 front, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/cards/card-c04-front-home.png` | NEEDS CLEANUP | Home Cards Preview | Non-destructive resized PNG derivative for Home use. |
-| C05 front | `src/assets/legends/christian-chukwu/cards/card-c05-front.png` | NEEDS CLEANUP | Home Cards Preview | Supplied concept artwork. Contains crest-like marks and embedded text. |
-| C05 front, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/cards/card-c05-front-home.png` | NEEDS CLEANUP | Home Cards Preview | Non-destructive resized PNG derivative for Home use. |
-| C01-C05 backs | `src/assets/legends/christian-chukwu/cards/card-c01-back.png` through `card-c05-back.png` | NEEDS CLEANUP | Future Cards Page | Preserved for future card detail work; not used on Home yet. |
+| C01 The Legend front | `src/assets/legends/christian-chukwu/cards/C01 — THE LEGEND-FRONT.png` | NEEDS CLEANUP | Cards Collector Archive | Supplied split front artwork. Contains crest-like marks and embedded text; use visually only until cleaned/verified. |
+| C01 The Legend back | `src/assets/legends/christian-chukwu/cards/C01 — THE LEGEND-BACK.png` | NEEDS CLEANUP | Cards Collector Archive | Supplied split back artwork. Contains crest-like marks and embedded text; use visually only until cleaned/verified. |
+| C02 The Moment front | `src/assets/legends/christian-chukwu/cards/C02 — THE MOMENT-FRONT.png` | NEEDS CLEANUP | Cards Collector Archive | Supplied split front artwork. Contains crest-like marks and embedded text; use visually only until cleaned/verified. |
+| C02 The Moment back | `src/assets/legends/christian-chukwu/cards/C02 — THE MOMENT-BACK.png` | NEEDS CLEANUP | Cards Collector Archive | Supplied split back artwork. Contains crest-like marks and embedded text; use visually only until cleaned/verified. |
+| C03 The Glory front | `src/assets/legends/christian-chukwu/cards/C03 — THE GLORY-FRONT.png` | NEEDS CLEANUP | Cards Collector Archive | Supplied split front artwork. Contains crest-like marks and embedded text; use visually only until cleaned/verified. |
+| C03 The Glory back | `src/assets/legends/christian-chukwu/cards/C03 — THE GLORY-BACK.png` | NEEDS CLEANUP | Cards Collector Archive | Supplied split back artwork. Contains crest-like marks and embedded text; use visually only until cleaned/verified. |
+| C04 The Captain front | `src/assets/legends/christian-chukwu/cards/C04 — THE CAPTAIN-FRONT.png` | NEEDS CLEANUP | Cards Collector Archive | Supplied split front artwork. Contains crest-like marks and embedded text; use visually only until cleaned/verified. |
+| C04 The Captain back | `src/assets/legends/christian-chukwu/cards/C04 — THE CAPTAIN-BACK.png` | NEEDS CLEANUP | Cards Collector Archive | Supplied split back artwork. Contains crest-like marks and embedded text; use visually only until cleaned/verified. |
+| C05 The Legacy front | `src/assets/legends/christian-chukwu/cards/C05 — THE LEGACY-FRONT.png` | NEEDS CLEANUP | Cards Collector Archive | Supplied split front artwork. Contains crest-like marks and embedded text; use visually only until cleaned/verified. |
+| C05 The Legacy back | `src/assets/legends/christian-chukwu/cards/C05 — THE LEGACY-BACK.png` | NEEDS CLEANUP | Cards Collector Archive | Supplied split back artwork. Contains crest-like marks and embedded text; use visually only until cleaned/verified. |
+| Legacy C01-C05 card files | `src/assets/legends/christian-chukwu/cards/card-c01-front.png` through `card-c05-back.png` | NEEDS CLEANUP | Source only | Older card files preserved but not used on the Cards Collector Archive now that split front/back assets exist. |
+| C01-C05 optimized Home derivatives | `src/assets/legends/christian-chukwu/optimized/cards/card-c01-front-home.png` through `card-c05-front-home.png` | NEEDS CLEANUP | Source only | Earlier non-destructive Home derivatives retained for reference; split assets are now the canonical card data. |
 
 ### Covers
 

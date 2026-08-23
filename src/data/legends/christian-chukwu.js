@@ -15,11 +15,16 @@ import collectionHeroMain from '../../assets/legends/christian-chukwu/optimized/
 import tee01Home from '../../assets/legends/christian-chukwu/optimized/apparel/tee-01-home.png';
 import tee02Home from '../../assets/legends/christian-chukwu/optimized/apparel/tee-02-home.png';
 import tee03Home from '../../assets/legends/christian-chukwu/optimized/apparel/tee-03-home.png';
-import cardC01Front from '../../assets/legends/christian-chukwu/optimized/cards/card-c01-front-home.png';
-import cardC02Front from '../../assets/legends/christian-chukwu/optimized/cards/card-c02-front-home.png';
-import cardC03Front from '../../assets/legends/christian-chukwu/optimized/cards/card-c03-front-home.png';
-import cardC04Front from '../../assets/legends/christian-chukwu/optimized/cards/card-c04-front-home.png';
-import cardC05Front from '../../assets/legends/christian-chukwu/optimized/cards/card-c05-front-home.png';
+import cardC01Front from '../../assets/legends/christian-chukwu/cards/C01 — THE LEGEND-FRONT.png';
+import cardC01Back from '../../assets/legends/christian-chukwu/cards/C01 — THE LEGEND-BACK.png';
+import cardC02Front from '../../assets/legends/christian-chukwu/cards/C02 — THE MOMENT-FRONT.png';
+import cardC02Back from '../../assets/legends/christian-chukwu/cards/C02 — THE MOMENT-BACK.png';
+import cardC03Front from '../../assets/legends/christian-chukwu/cards/C03 — THE GLORY-FRONT.png';
+import cardC03Back from '../../assets/legends/christian-chukwu/cards/C03 — THE GLORY-BACK.png';
+import cardC04Front from '../../assets/legends/christian-chukwu/cards/C04 — THE CAPTAIN-FRONT.png';
+import cardC04Back from '../../assets/legends/christian-chukwu/cards/C04 — THE CAPTAIN-BACK.png';
+import cardC05Front from '../../assets/legends/christian-chukwu/cards/C05 — THE LEGACY-FRONT.png';
+import cardC05Back from '../../assets/legends/christian-chukwu/cards/C05 — THE LEGACY-BACK.png';
 
 const christianChukwu = {
   slug: 'christian-chukwu',
@@ -343,42 +348,62 @@ const christianChukwu = {
   cards: [
     {
       id: 'c01',
+      number: 'C01',
       title: 'C01 - THE LEGEND',
+      displayTitle: 'The Legend',
       front: cardC01Front,
-      back: null,
-      alt: 'C01 The Legend concept card artwork',
+      back: cardC01Back,
+      alt: 'C01 The Legend concept card front artwork',
+      frontAlt: 'C01 The Legend concept card front artwork',
+      backAlt: 'C01 The Legend concept card back artwork',
       status: 'NEEDS CLEANUP',
     },
     {
       id: 'c02',
+      number: 'C02',
       title: 'C02 - THE MOMENT',
+      displayTitle: 'The Moment',
       front: cardC02Front,
-      back: null,
-      alt: 'C02 The Moment concept card artwork',
+      back: cardC02Back,
+      alt: 'C02 The Moment concept card front artwork',
+      frontAlt: 'C02 The Moment concept card front artwork',
+      backAlt: 'C02 The Moment concept card back artwork',
       status: 'NEEDS CLEANUP',
     },
     {
       id: 'c03',
+      number: 'C03',
       title: 'C03 - THE GLORY',
+      displayTitle: 'The Glory',
       front: cardC03Front,
-      back: null,
-      alt: 'C03 The Glory concept card artwork',
+      back: cardC03Back,
+      alt: 'C03 The Glory concept card front artwork',
+      frontAlt: 'C03 The Glory concept card front artwork',
+      backAlt: 'C03 The Glory concept card back artwork',
       status: 'NEEDS CLEANUP',
     },
     {
       id: 'c04',
+      number: 'C04',
       title: 'C04 - THE CAPTAIN',
+      displayTitle: 'The Captain',
       front: cardC04Front,
-      back: null,
-      alt: 'C04 The Captain concept card artwork',
+      back: cardC04Back,
+      alt: 'C04 The Captain concept card front artwork',
+      frontAlt: 'C04 The Captain concept card front artwork',
+      backAlt: 'C04 The Captain concept card back artwork',
       status: 'NEEDS CLEANUP',
     },
     {
       id: 'c05',
+      number: 'C05',
       title: 'C05 - THE LEGACY',
+      displayTitle: 'The Legacy',
       front: cardC05Front,
-      back: null,
-      alt: 'C05 The Legacy concept card artwork',
+      back: cardC05Back,
+      alt: 'C05 The Legacy concept card front artwork',
+      frontAlt: 'C05 The Legacy concept card front artwork',
+      backAlt: 'C05 The Legacy concept card back artwork',
       status: 'NEEDS CLEANUP',
     },
   ],
