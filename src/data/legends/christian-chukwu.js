@@ -1,7 +1,11 @@
 import coverChairmanPenalty from '../../assets/legends/christian-chukwu/optimized/story/cover-chairman-penalty-home.png';
 import comicPage01 from '../../assets/legends/christian-chukwu/optimized/story/comic-page-01-home.png';
+import comicPage02 from '../../assets/legends/christian-chukwu/comic/comic-page-02.png';
+import comicPage06 from '../../assets/legends/christian-chukwu/comic/comic-page-06.png';
+import comicPage08 from '../../assets/legends/christian-chukwu/comic/comic-page-08.png';
 import graphicChairman01 from '../../assets/legends/christian-chukwu/optimized/graphics/graphic-chairman-01-home.png';
 import graphicChampions03 from '../../assets/legends/christian-chukwu/optimized/story/graphic-champions-03-home.png';
+import graphicKaduna02 from '../../assets/legends/christian-chukwu/optimized/graphics/graphic-kaduna-02-hub.png';
 import collectionHeroMain from '../../assets/legends/christian-chukwu/optimized/collection/collection-hero-main-home.png';
 import tee01Home from '../../assets/legends/christian-chukwu/optimized/apparel/tee-01-home.png';
 import tee02Home from '../../assets/legends/christian-chukwu/optimized/apparel/tee-02-home.png';
@@ -28,7 +32,7 @@ const christianChukwu = {
     'Mentor',
   ],
   summary:
-    'Legend 001 in the Rangers Legends archive. Detailed historical content will be added only after it is supplied and approved.',
+    'Christian Chukwu was a Rangers International F.C. player and captain who later captained Nigeria and moved into coaching.',
   years: null,
   collection: 'RANGERS LEGENDS 001',
   hero: {
@@ -84,6 +88,32 @@ const christianChukwu = {
         title: 'The Glory',
         src: graphicChampions03,
         alt: 'Concept graphic artwork preview for The Glory',
+        status: 'NEEDS CLEANUP',
+      },
+    ],
+    hubStoryPreview: [
+      {
+        id: 'the-wound',
+        year: '1975',
+        title: 'The Wound',
+        src: comicPage02,
+        alt: 'Comic page concept artwork preview for 1975 The Wound',
+        status: 'NEEDS CLEANUP',
+      },
+      {
+        id: 'the-moment',
+        year: '1977',
+        title: 'The Moment',
+        src: comicPage06,
+        alt: 'Comic page concept artwork preview for 1977 The Moment',
+        status: 'NEEDS CLEANUP',
+      },
+      {
+        id: 'the-glory',
+        year: '1977',
+        title: 'The Glory',
+        src: comicPage08,
+        alt: 'Comic page concept artwork preview for 1977 The Glory',
         status: 'NEEDS CLEANUP',
       },
     ],
@@ -164,7 +194,7 @@ const christianChukwu = {
     },
     {
       id: 'graphic-kaduna-02',
-      file: 'src/assets/legends/christian-chukwu/graphics/graphic-kaduna-02.png',
+      src: graphicKaduna02,
       alt: 'Kaduna 1977 concept graphic artwork',
       status: 'NEEDS CLEANUP',
     },
