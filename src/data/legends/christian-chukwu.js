@@ -305,6 +305,11 @@ const christianChukwu = {
   apparel: [
     {
       id: 'tee-01',
+      number: '01',
+      name: 'TEE 01',
+      label: 'The Man',
+      headline: 'The Man.',
+      subject: ['Christian Chukwu', 'Chairman', 'No. 5'],
       title: 'TEE 01 - THE MAN / CHAIRMAN',
       image: tee01Home,
       alt: 'TEE 01 The Man Chairman concept shirt mockup',
@@ -312,6 +317,11 @@ const christianChukwu = {
     },
     {
       id: 'tee-02',
+      number: '02',
+      name: 'TEE 02',
+      label: 'The Moment',
+      headline: 'The Moment.',
+      subject: ['Kaduna', '1977'],
       title: 'TEE 02 - THE MOMENT / KADUNA 1977',
       image: tee02Home,
       alt: 'TEE 02 The Moment Kaduna 1977 concept shirt mockup',
@@ -319,6 +329,11 @@ const christianChukwu = {
     },
     {
       id: 'tee-03',
+      number: '03',
+      name: 'TEE 03',
+      label: 'The Glory',
+      headline: 'The Glory.',
+      subject: ['African', 'Champions'],
       title: 'TEE 03 - THE GLORY / AFRICAN CHAMPIONS',
       image: tee03Home,
       alt: 'TEE 03 The Glory African Champions concept shirt mockup',

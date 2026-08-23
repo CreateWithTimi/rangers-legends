@@ -41,11 +41,11 @@ This manifest tracks approved or placeholder media so future work does not guess
 | Asset | File | Status | Used On | Notes |
 | --- | --- | --- | --- | --- |
 | TEE 01 shirt mockup | `src/assets/legends/christian-chukwu/apparel/TEE 01.png` | NEEDS CLEANUP | Source only | Supplied concept tee artwork. Contains crest-like marks, generated typography, sizes/specs, and product-detail text inside the image. |
-| TEE 01 shirt mockup, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/apparel/tee-01-home.png` | NEEDS CLEANUP | Home Apparel Preview | Non-destructive resized PNG derivative for Home use. |
+| TEE 01 shirt mockup, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/apparel/tee-01-home.png` | NEEDS CLEANUP | Home Apparel Preview, Apparel Lookbook | Non-destructive resized PNG derivative for Home/Apparel use. |
 | TEE 02 shirt mockup | `src/assets/legends/christian-chukwu/apparel/TEE 02.png` | NEEDS CLEANUP | Source only | Supplied concept tee artwork. Contains crest-like marks, generated typography, sizes/specs, and product-detail text inside the image. |
-| TEE 02 shirt mockup, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/apparel/tee-02-home.png` | NEEDS CLEANUP | Home Apparel Preview | Non-destructive resized PNG derivative for Home use. |
+| TEE 02 shirt mockup, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/apparel/tee-02-home.png` | NEEDS CLEANUP | Home Apparel Preview, Apparel Lookbook | Non-destructive resized PNG derivative for Home/Apparel use. |
 | TEE 03 shirt mockup | `src/assets/legends/christian-chukwu/apparel/TEE 03.png` | NEEDS CLEANUP | Source only | Supplied concept tee artwork. Contains crest-like marks, generated typography, sizes/specs, and product-detail text inside the image. |
-| TEE 03 shirt mockup, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/apparel/tee-03-home.png` | NEEDS CLEANUP | Home Apparel Preview | Non-destructive resized PNG derivative for Home use. |
+| TEE 03 shirt mockup, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/apparel/tee-03-home.png` | NEEDS CLEANUP | Home Apparel Preview, Apparel Lookbook | Non-destructive resized PNG derivative for Home/Apparel use. |
 | Collection hero source | `src/assets/legends/christian-chukwu/apparel/collection-hero-main.png` | NEEDS CLEANUP | Source only | Original supplied location preserved. |
 | Collector experience source | `src/assets/legends/christian-chukwu/apparel/collection-collector-experience.png` | NEEDS CLEANUP | Source only | Original supplied location preserved. |
 
