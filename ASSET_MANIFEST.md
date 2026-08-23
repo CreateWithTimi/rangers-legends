@@ -29,12 +29,12 @@ This manifest tracks approved or placeholder media so future work does not guess
 
 | Asset | File | Status | Used On | Notes |
 | --- | --- | --- | --- | --- |
-| Chairman graphic 01 | `src/assets/legends/christian-chukwu/graphics/graphic-chairman-01.png` | NEEDS CLEANUP | Home Featured Legend | Supplied concept artwork. Contains crest-like marks; use visually only until cleaned/verified. |
-| Chairman graphic 01, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/graphics/graphic-chairman-01-home.png` | NEEDS CLEANUP | Home Hero, Home Featured Legend, Legend Hub Hero, Legend Hub Graphics Preview, Film Legacy | Non-destructive resized PNG derivative for Home/Hub/Film use. |
+| Chairman graphic 01 | `src/assets/legends/christian-chukwu/graphics/graphic-chairman-01.png` | NEEDS CLEANUP | Source only | Supplied concept artwork. Contains crest-like marks; use visually only until cleaned/verified. |
+| Chairman graphic 01, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/graphics/graphic-chairman-01-home.png` | NEEDS CLEANUP | Home Hero, Home Featured Legend, Legend Hub Hero, Legend Hub Graphics Preview, Film Legacy, Graphics Gallery | Non-destructive resized PNG derivative for Home/Hub/Film/Graphics use. |
 | Kaduna graphic 02 | `src/assets/legends/christian-chukwu/graphics/graphic-kaduna-02.png` | NEEDS CLEANUP | Home Story Preview | Supplied concept artwork; embedded text should not be treated as verified site copy. |
-| Kaduna graphic 02, optimized Hub derivative | `src/assets/legends/christian-chukwu/optimized/graphics/graphic-kaduna-02-hub.png` | NEEDS CLEANUP | Legend Hub Graphics Preview | Non-destructive resized PNG derivative for Hub use. |
+| Kaduna graphic 02, optimized Hub derivative | `src/assets/legends/christian-chukwu/optimized/graphics/graphic-kaduna-02-hub.png` | NEEDS CLEANUP | Legend Hub Graphics Preview, Graphics Gallery | Non-destructive resized PNG derivative for Hub/Graphics use. |
 | Champions graphic 03 | `src/assets/legends/christian-chukwu/graphics/graphic-champions-03.png` | NEEDS CLEANUP | Home Story Preview | Supplied concept artwork; embedded text should not be treated as verified site copy. |
-| Champions graphic 03, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/story/graphic-champions-03-home.png` | NEEDS CLEANUP | Home Story Preview, Legend Hub Graphics Preview, Film Journey | Non-destructive resized PNG derivative for Home/Hub/Film use. |
+| Champions graphic 03, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/story/graphic-champions-03-home.png` | NEEDS CLEANUP | Home Story Preview, Legend Hub Graphics Preview, Film Journey, Graphics Gallery | Non-destructive resized PNG derivative for Home/Hub/Film/Graphics use. |
 
 ### Apparel
 
