@@ -1,7 +1,12 @@
 import coverChairmanPenalty from '../../assets/legends/christian-chukwu/optimized/story/cover-chairman-penalty-home.png';
-import comicPage01 from '../../assets/legends/christian-chukwu/optimized/story/comic-page-01-home.png';
+import comicPage01Preview from '../../assets/legends/christian-chukwu/optimized/story/comic-page-01-home.png';
+import comicPage01 from '../../assets/legends/christian-chukwu/comic/comic-page-01.png';
 import comicPage02 from '../../assets/legends/christian-chukwu/comic/comic-page-02.png';
+import comicPage03 from '../../assets/legends/christian-chukwu/comic/comic-page-03.png';
+import comicPage04 from '../../assets/legends/christian-chukwu/comic/comic-page-04.png';
+import comicPage05 from '../../assets/legends/christian-chukwu/comic/comic-page-05.png';
 import comicPage06 from '../../assets/legends/christian-chukwu/comic/comic-page-06.png';
+import comicPage07 from '../../assets/legends/christian-chukwu/comic/comic-page-07.png';
 import comicPage08 from '../../assets/legends/christian-chukwu/comic/comic-page-08.png';
 import graphicChairman01 from '../../assets/legends/christian-chukwu/optimized/graphics/graphic-chairman-01-home.png';
 import graphicChampions03 from '../../assets/legends/christian-chukwu/optimized/story/graphic-champions-03-home.png';
@@ -70,7 +75,7 @@ const christianChukwu = {
         id: 'the-wound',
         year: '1975',
         title: 'The Wound',
-        src: comicPage01,
+        src: comicPage01Preview,
         alt: 'Concept comic artwork preview for The Wound',
         status: 'NEEDS CLEANUP',
       },
@@ -117,7 +122,13 @@ const christianChukwu = {
         status: 'NEEDS CLEANUP',
       },
     ],
-    film: null,
+    film: {
+      keyArt: {
+        src: coverChairmanPenalty,
+        alt: 'Christian Chukwu cinematic concept artwork for the Chairman film',
+        status: 'NEEDS CLEANUP',
+      },
+    },
     collection: {
       hero: {
         src: collectionHeroMain,
@@ -135,55 +146,123 @@ const christianChukwu = {
     {
       id: 'comic-page-01',
       file: 'src/assets/legends/christian-chukwu/comic/comic-page-01.png',
-      alt: 'Concept comic page 01',
+      src: comicPage01,
+      number: 1,
+      alt: 'Christian Chukwu comic page 01 concept artwork',
       status: 'NEEDS CLEANUP',
     },
     {
       id: 'comic-page-02',
       file: 'src/assets/legends/christian-chukwu/comic/comic-page-02.png',
-      alt: 'Concept comic page 02',
+      src: comicPage02,
+      number: 2,
+      alt: 'Christian Chukwu comic page 02 concept artwork',
       status: 'NEEDS CLEANUP',
     },
     {
       id: 'comic-page-03',
       file: 'src/assets/legends/christian-chukwu/comic/comic-page-03.png',
-      alt: 'Concept comic page 03',
+      src: comicPage03,
+      number: 3,
+      alt: 'Christian Chukwu comic page 03 concept artwork',
       status: 'NEEDS CLEANUP',
     },
     {
       id: 'comic-page-04',
       file: 'src/assets/legends/christian-chukwu/comic/comic-page-04.png',
-      alt: 'Concept comic page 04',
+      src: comicPage04,
+      number: 4,
+      alt: 'Christian Chukwu comic page 04 concept artwork',
       status: 'NEEDS CLEANUP',
     },
     {
       id: 'comic-page-05',
       file: 'src/assets/legends/christian-chukwu/comic/comic-page-05.png',
-      alt: 'Concept comic page 05',
+      src: comicPage05,
+      number: 5,
+      alt: 'Christian Chukwu comic page 05 concept artwork',
       status: 'NEEDS CLEANUP',
     },
     {
       id: 'comic-page-06',
       file: 'src/assets/legends/christian-chukwu/comic/comic-page-06.png',
-      alt: 'Concept comic page 06',
+      src: comicPage06,
+      number: 6,
+      alt: 'Christian Chukwu comic page 06 concept artwork',
       status: 'NEEDS CLEANUP',
     },
     {
       id: 'comic-page-07',
       file: 'src/assets/legends/christian-chukwu/comic/comic-page-07.png',
-      alt: 'Concept comic page 07',
+      src: comicPage07,
+      number: 7,
+      alt: 'Christian Chukwu comic page 07 concept artwork',
       status: 'NEEDS CLEANUP',
     },
     {
       id: 'comic-page-08',
       file: 'src/assets/legends/christian-chukwu/comic/comic-page-08.png',
-      alt: 'Concept comic page 08',
+      src: comicPage08,
+      number: 8,
+      alt: 'Christian Chukwu comic page 08 concept artwork',
       status: 'NEEDS CLEANUP',
     },
   ],
   film: {
     status: 'Coming Soon',
-    image: null,
+    title: 'Chairman',
+    eyebrow: 'Rangers Legends Film 001',
+    subtitle: 'A Rangers Legends Film',
+    keyArt: {
+      src: coverChairmanPenalty,
+      alt: 'Christian Chukwu cinematic concept artwork for the Chairman film',
+      status: 'NEEDS CLEANUP',
+    },
+    synopsis:
+      'A cinematic journey through the defining moments of Christian Chukwu’s story — from setback and pressure to continental glory, national leadership, and a legacy that outlived the final whistle.',
+    beats: [
+      {
+        marker: '1975',
+        title: 'The Wound',
+        image: comicPage02,
+        alt: 'Comic page concept artwork representing the 1975 film beat',
+        status: 'NEEDS CLEANUP',
+      },
+      {
+        marker: '1977',
+        title: 'The Moment',
+        image: coverChairmanPenalty,
+        alt: 'Chairman penalty concept artwork representing the 1977 film beat',
+        status: 'NEEDS CLEANUP',
+      },
+      {
+        marker: '1977',
+        title: 'The Glory',
+        image: graphicChampions03,
+        alt: 'African Champions concept artwork representing the glory film beat',
+        status: 'NEEDS CLEANUP',
+      },
+      {
+        marker: '1980',
+        title: 'The Nation',
+        image: comicPage08,
+        alt: 'Comic page concept artwork representing the nation film beat',
+        status: 'NEEDS CLEANUP',
+      },
+      {
+        marker: 'Forever',
+        title: 'The Legacy',
+        image: graphicChairman01,
+        alt: 'Christian Chukwu portrait concept artwork representing the legacy film beat',
+        status: 'NEEDS CLEANUP',
+      },
+    ],
+    legacyStatement: [
+      'Some men win matches.',
+      'Some men lead teams.',
+      'And some leave something behind...',
+      'that keeps moving long after they stop.',
+    ],
   },
   graphics: [
     {

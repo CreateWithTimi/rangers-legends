@@ -15,26 +15,26 @@ This manifest tracks approved or placeholder media so future work does not guess
 
 | Asset | File | Status | Used On | Notes |
 | --- | --- | --- | --- | --- |
-| Comic page 01 | `src/assets/legends/christian-chukwu/comic/comic-page-01.png` | NEEDS CLEANUP | Home Story Preview | Supplied concept artwork; embedded text should not be treated as verified site copy. |
+| Comic page 01 | `src/assets/legends/christian-chukwu/comic/comic-page-01.png` | NEEDS CLEANUP | Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
 | Comic page 01, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/story/comic-page-01-home.png` | NEEDS CLEANUP | Home Story Preview | Non-destructive resized PNG derivative for Home use. |
-| Comic page 02 | `src/assets/legends/christian-chukwu/comic/comic-page-02.png` | NEEDS CLEANUP | Legend Hub Story Preview, Future Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
-| Comic page 03 | `src/assets/legends/christian-chukwu/comic/comic-page-03.png` | NEEDS CLEANUP | Home Story Preview | Supplied concept artwork; embedded text should not be treated as verified site copy. |
-| Comic page 04 | `src/assets/legends/christian-chukwu/comic/comic-page-04.png` | NEEDS CLEANUP | Future Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
-| Comic page 05 | `src/assets/legends/christian-chukwu/comic/comic-page-05.png` | NEEDS CLEANUP | Future Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
-| Comic page 06 | `src/assets/legends/christian-chukwu/comic/comic-page-06.png` | NEEDS CLEANUP | Legend Hub Story Preview, Future Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
-| Comic page 07 | `src/assets/legends/christian-chukwu/comic/comic-page-07.png` | NEEDS CLEANUP | Future Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
-| Comic page 08 | `src/assets/legends/christian-chukwu/comic/comic-page-08.png` | NEEDS CLEANUP | Legend Hub Story Preview, Future Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
+| Comic page 02 | `src/assets/legends/christian-chukwu/comic/comic-page-02.png` | NEEDS CLEANUP | Legend Hub Story Preview, Comic Reader, Film Journey | Supplied concept artwork; embedded text should not be treated as verified site copy. |
+| Comic page 03 | `src/assets/legends/christian-chukwu/comic/comic-page-03.png` | NEEDS CLEANUP | Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
+| Comic page 04 | `src/assets/legends/christian-chukwu/comic/comic-page-04.png` | NEEDS CLEANUP | Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
+| Comic page 05 | `src/assets/legends/christian-chukwu/comic/comic-page-05.png` | NEEDS CLEANUP | Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
+| Comic page 06 | `src/assets/legends/christian-chukwu/comic/comic-page-06.png` | NEEDS CLEANUP | Legend Hub Story Preview, Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
+| Comic page 07 | `src/assets/legends/christian-chukwu/comic/comic-page-07.png` | NEEDS CLEANUP | Comic Reader | Supplied concept artwork; embedded text should not be treated as verified site copy. |
+| Comic page 08 | `src/assets/legends/christian-chukwu/comic/comic-page-08.png` | NEEDS CLEANUP | Legend Hub Story Preview, Comic Reader, Film Journey | Supplied concept artwork; embedded text should not be treated as verified site copy. |
 
 ### Graphics
 
 | Asset | File | Status | Used On | Notes |
 | --- | --- | --- | --- | --- |
 | Chairman graphic 01 | `src/assets/legends/christian-chukwu/graphics/graphic-chairman-01.png` | NEEDS CLEANUP | Home Featured Legend | Supplied concept artwork. Contains crest-like marks; use visually only until cleaned/verified. |
-| Chairman graphic 01, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/graphics/graphic-chairman-01-home.png` | NEEDS CLEANUP | Home Hero, Home Featured Legend, Legend Hub Hero, Legend Hub Graphics Preview | Non-destructive resized PNG derivative for Home/Hub use. |
+| Chairman graphic 01, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/graphics/graphic-chairman-01-home.png` | NEEDS CLEANUP | Home Hero, Home Featured Legend, Legend Hub Hero, Legend Hub Graphics Preview, Film Legacy | Non-destructive resized PNG derivative for Home/Hub/Film use. |
 | Kaduna graphic 02 | `src/assets/legends/christian-chukwu/graphics/graphic-kaduna-02.png` | NEEDS CLEANUP | Home Story Preview | Supplied concept artwork; embedded text should not be treated as verified site copy. |
 | Kaduna graphic 02, optimized Hub derivative | `src/assets/legends/christian-chukwu/optimized/graphics/graphic-kaduna-02-hub.png` | NEEDS CLEANUP | Legend Hub Graphics Preview | Non-destructive resized PNG derivative for Hub use. |
 | Champions graphic 03 | `src/assets/legends/christian-chukwu/graphics/graphic-champions-03.png` | NEEDS CLEANUP | Home Story Preview | Supplied concept artwork; embedded text should not be treated as verified site copy. |
-| Champions graphic 03, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/story/graphic-champions-03-home.png` | NEEDS CLEANUP | Home Story Preview, Legend Hub Graphics Preview | Non-destructive resized PNG derivative for Home/Hub use. |
+| Champions graphic 03, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/story/graphic-champions-03-home.png` | NEEDS CLEANUP | Home Story Preview, Legend Hub Graphics Preview, Film Journey | Non-destructive resized PNG derivative for Home/Hub/Film use. |
 
 ### Apparel
 
@@ -71,7 +71,7 @@ This manifest tracks approved or placeholder media so future work does not guess
 | --- | --- | --- | --- | --- |
 | Chairman cover main | `src/assets/legends/christian-chukwu/covers/cover-chairman-main.png` | NEEDS CLEANUP | Home Film Preview | Supplied concept artwork; may require cleanup before final production use. |
 | Chairman penalty cover | `src/assets/legends/christian-chukwu/covers/cover-chairman-penalty.png` | NEEDS CLEANUP | Home Story Preview | Supplied concept artwork; embedded text should not be treated as verified site copy. |
-| Chairman penalty cover, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/story/cover-chairman-penalty-home.png` | NEEDS CLEANUP | Home Story Preview | Non-destructive resized PNG derivative for Home use. |
+| Chairman penalty cover, optimized Home derivative | `src/assets/legends/christian-chukwu/optimized/story/cover-chairman-penalty-home.png` | NEEDS CLEANUP | Home Story Preview, Film Hero, Film Journey | Non-destructive resized PNG derivative for Home/Film use. |
 
 ### Collection
 
@@ -85,4 +85,4 @@ This manifest tracks approved or placeholder media so future work does not guess
 
 | Asset | File | Status | Used On | Notes |
 | --- | --- | --- | --- | --- |
-| Film key art | Not supplied | PLACEHOLDER | Home Film Preview | Keep cinematic placeholder until an approved film-specific asset is supplied. |
+| Film key art | `src/assets/legends/christian-chukwu/optimized/story/cover-chairman-penalty-home.png` | NEEDS CLEANUP | Film Page Hero | Reused supplied concept artwork as passive film key art; contains embedded/generated text and crest-like marks, so it should be cleaned or replaced when final film media is supplied. |
