@@ -665,3 +665,108 @@ Deployment status.
 - Deployment is still pending.
 - React Router nested routes still require the selected host to serve `dist/index.html` for direct route requests.
 - Build passed after integration.
+
+## Milestone 13 — Live Production QA
+
+Production URL.
+
+- Target production origin: `https://rangers-legends.vercel.app`.
+- Live URL fetch could not be completed from this local sandbox because DNS resolution for `rangers-legends.vercel.app` failed in the execution environment.
+- The deployed URL, production `VITE_SITE_URL`, and social preview behavior were reported as live/working by the project owner.
+- This release check is therefore source/config/build verified, with final live browser confirmation still recommended on a normal network.
+
+Route status.
+
+| Route | Status | Notes |
+| --- | --- | --- |
+| `/` | PASS | Route exists, renders Home, and has default route metadata. |
+| `/legends` | PASS | Route exists, renders the polished Living Archive directory, and has route metadata. |
+| `/legends/christian-chukwu` | PASS | Route exists, renders Legend Hub, and has route metadata. |
+| `/legends/christian-chukwu/story` | PASS | Route exists, renders Comic Reader, and has route metadata. |
+| `/legends/christian-chukwu/film` | PASS | Route exists, renders Film Coming Soon page, and has route metadata. |
+| `/legends/christian-chukwu/graphics` | PASS | Route exists, renders Graphics Gallery, and has route metadata. |
+| `/legends/christian-chukwu/apparel` | PASS | Route exists, renders Apparel Lookbook, and has route metadata. |
+| `/legends/christian-chukwu/cards` | PASS | Route exists, renders Cards Collector Archive, and has route metadata. |
+| Unknown route | PASS | `*` route renders NotFound; route metadata marks unknown routes `noindex, follow`. |
+
+SPA fallback status.
+
+- `vercel.json` contains the minimal Vercel SPA rewrite from `/(.*)` to `/index.html`.
+- This is intended to allow direct requests and refreshes on nested React Router routes.
+- `public/rangers-legends-og.jpg` remains a public static file and should resolve at `/rangers-legends-og.jpg` after deployment.
+- No source concern found with the rewrite configuration.
+
+Navigation status.
+
+- Header and footer internal paths are valid by source inspection.
+- Mobile hamburger retains `aria-expanded`, `aria-controls`, Escape close, close button close, link-close behavior, body scroll lock, focus containment, and focus restoration.
+- Top-level Stories / Films / Graphics / Apparel / Cards links intentionally route to the current Legend 001 experiences for V1.
+- Completion links in Cards route to Story, Film, Graphics, Apparel, Cards, Legend Hub, and Legends.
+
+Interaction status.
+
+- Legend Hub archive navigation includes Overview, Story, Film, Graphics, Apparel, and Cards anchors, smooth-scroll behavior with reduced-motion handling, active-section state via `IntersectionObserver`, and observer cleanup.
+- Comic Reader uses eight ordered comic pages, single/spread modes, Previous/Next controls, keyboard arrows with editable-target guard, compact single-page enforcement, fullscreen support with rejection handling, `fullscreenchange` synchronization, and image error states.
+- Graphics Gallery uses three graphics, modal viewer open/close, Previous/Next, Escape, Arrow Left/Right, backdrop close, focus trap, focus return, body scroll restoration, and artwork fallback states. No download controls are present.
+- Apparel uses TEE 01, TEE 02, and TEE 03 optimized media, contains no price/stock/size-selector/buy flow, and links onward to Cards.
+- Cards uses C01-C05 optimized front/back mappings, selector, flip, explicit View Front/View Back button, Previous/Next, keyboard arrows, front reset on card change, reduced-motion handling, fallback geometry, and completion links. No commerce, rarity, fake ownership, or marketplace language found.
+
+Responsive status.
+
+- Late mobile fixes remain present for SiteHeader menu containment, Legend Hub Hero containment, and Legend Hub Story media.
+- Source scan found no unresolved `100vw` use inside the Legend Hub padded hero/media chain.
+- Intentional horizontal scroll remains in archive/media controls where previously approved.
+- Local live/rendered QA was not possible from this sandbox; final human browser spot-check remains recommended at 390px, 768px, 1024px, and 1440px.
+
+Metadata/shareability status.
+
+- Default title: `Rangers Legends — The Stories Behind the Shirt`.
+- Default description: `An evolving storytelling archive celebrating the players, moments and stories that shaped Rangers International F.C.`
+- `VITE_SITE_URL` remains the only source of the production origin in source/config.
+- No hardcoded `https://rangers-legends.vercel.app` production URL was found in source files.
+- Production-origin build verification generated absolute social image metadata for `https://rangers-legends.vercel.app/rangers-legends-og.jpg`.
+- Route-aware canonical URLs and `og:url` are set by the client `RouteMetadata` layer when `VITE_SITE_URL` exists.
+- 404/unknown routes receive route-level `noindex, follow` and no canonical URL.
+- The approved social image remains `public/rangers-legends-og.jpg`, confirmed at 1728 x 910.
+
+Performance status.
+
+- Build passed.
+- App-bundled emitted media in `dist/assets`: 16.48 MiB.
+- Total emitted media including the approved public OG image: 18.44 MiB.
+- JS bundle: 290.58 kB, gzip 85.98 kB.
+- CSS bundle: 66.18 kB, gzip 11.05 kB.
+- Largest production media are the approved social preview image and the optimized comic reader pages, each comic page around 1.0-1.1 MB.
+- No meaningful regression from the Milestone 11.3 app media target; the increase comes from the required public social preview asset.
+
+Accessibility status.
+
+- Skip link, main landmark, footer, semantic sections, visible focus, button/link semantics, mobile menu semantics, Graphics focus trap, Comic keyboard support, Cards keyboard support, reduced-motion CSS, and useful alt text remain present by source inspection.
+- Remaining known limitation: embedded text inside concept artwork is not accessible as real text, but essential UI copy is represented in HTML.
+
+Official-status and content safety.
+
+- Search found no accidental HTML/source claims for official product status, official archive, licensed merchandise, partnership, Buy Now, Add to Cart, stock, price, rarity, or ownership.
+- Footer still states concept/archive status and that no official endorsement, licensing, partnership, or merchandise availability is implied.
+- Known concept-art debt remains: many visible artwork files are still marked `NEEDS CLEANUP` and contain generated/provisional marks or embedded text.
+
+Development leak check.
+
+- No user-visible Lorem, TODO, FIXME, sample, dummy, or stale internal biography warning was found in application UI source.
+- Remaining `placeholder` matches are component/CSS names or intentional placeholder language for approved concept states.
+- No `console.log` or unnecessary `console.error` patterns were found in application source.
+
+Final readiness classification.
+
+- `CONTROLLED DEMO READY`.
+- `PUBLIC CONCEPT DEMO READY` with presenter/context framing.
+- `STAKEHOLDER PRESENTATION READY` for concept/storytelling/IP discussions when the remaining concept-art cleanup status is made clear.
+- Not `PRODUCTION / OFFICIAL LAUNCH READY` because visual IP/artwork cleanup and final rights review remain outstanding.
+
+Remaining actions.
+
+- Run final live browser route checks on the production URL from a normal network.
+- Confirm direct route refreshes on all nested routes in Vercel.
+- Verify social preview cards in WhatsApp, X, LinkedIn, and Discord after cache propagation.
+- Keep favicon pending until a safe standalone Rangers Legends identity asset is supplied.
+- Continue to treat all `NEEDS CLEANUP` media as concept demo artwork until cleaned/verified.
