@@ -58,17 +58,21 @@ function ComicReader() {
     goToPage(pageIndex + (canUseSpread ? 2 : 1));
   }
 
-  function toggleFullscreen() {
+  async function toggleFullscreen() {
     if (!fullscreenAvailable || !readerRef.current) {
       return;
     }
 
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
-      return;
-    }
+    try {
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
+        return;
+      }
 
-    readerRef.current.requestFullscreen();
+      await readerRef.current.requestFullscreen();
+    } catch {
+      setIsFullscreen(Boolean(document.fullscreenElement));
+    }
   }
 
   useEffect(() => {

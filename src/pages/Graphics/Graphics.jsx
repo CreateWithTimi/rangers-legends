@@ -13,11 +13,33 @@ function ArtworkMeta({ artwork, eyebrow = artwork.label }) {
   );
 }
 
+function ArtworkImage({ artwork, loading = 'lazy', imageErrors, onImageError }) {
+  if (imageErrors[artwork.id]) {
+    return (
+      <span className="graphics-artwork-fallback" role="img" aria-label={artwork.alt}>
+        Artwork unavailable
+      </span>
+    );
+  }
+
+  return (
+    <img
+      src={artwork.src}
+      alt={artwork.alt}
+      loading={loading}
+      decoding="async"
+      onError={() => onImageError(artwork.id)}
+    />
+  );
+}
+
 function Graphics() {
   const artworks = christianChukwu.graphics;
   const [activeIndex, setActiveIndex] = useState(null);
+  const [imageErrors, setImageErrors] = useState({});
   const closeButtonRef = useRef(null);
   const lastTriggerRef = useRef(null);
+  const viewerPanelRef = useRef(null);
   const activeArtwork = activeIndex === null ? null : artworks[activeIndex];
 
   function openViewer(index, event) {
@@ -37,6 +59,10 @@ function Graphics() {
     setActiveIndex((current) => (current === null ? current : (current + 1) % artworks.length));
   }
 
+  function markImageError(id) {
+    setImageErrors((current) => (current[id] ? current : { ...current, [id]: true }));
+  }
+
   useEffect(() => {
     document.title = `Graphics | ${christianChukwu.name} | Rangers Legends`;
   }, []);
@@ -54,11 +80,39 @@ function Graphics() {
         closeViewer();
       }
 
+      if (event.key === 'Tab' && viewerPanelRef.current) {
+        const focusableElements = viewerPanelRef.current.querySelectorAll('button:not([disabled]), [href]');
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (!firstElement || !lastElement) {
+          return;
+        }
+
+        if (!viewerPanelRef.current.contains(document.activeElement)) {
+          event.preventDefault();
+          firstElement.focus();
+          return;
+        }
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+          event.preventDefault();
+          lastElement.focus();
+        }
+
+        if (!event.shiftKey && document.activeElement === lastElement) {
+          event.preventDefault();
+          firstElement.focus();
+        }
+      }
+
       if (event.key === 'ArrowLeft') {
+        event.preventDefault();
         showPrevious();
       }
 
       if (event.key === 'ArrowRight') {
+        event.preventDefault();
         showNext();
       }
     };
@@ -94,7 +148,12 @@ function Graphics() {
       <section className="graphics-featured graphics-shell graphics-rule" aria-labelledby="featured-artwork-title">
         <div className="graphics-featured__art">
           <button type="button" onClick={(event) => openViewer(0, event)} aria-label={`View artwork: ${artworks[0].title}`}>
-            <img src={artworks[0].src} alt={artworks[0].alt} loading="eager" decoding="async" />
+            <ArtworkImage
+              artwork={artworks[0]}
+              loading="eager"
+              imageErrors={imageErrors}
+              onImageError={markImageError}
+            />
           </button>
         </div>
         <div className="graphics-featured__meta">
@@ -115,7 +174,12 @@ function Graphics() {
           {artworks.map((artwork, index) => (
             <article className={index === 0 ? 'graphics-piece graphics-piece--wide' : 'graphics-piece'} key={artwork.id}>
               <button type="button" onClick={(event) => openViewer(index, event)} aria-label={`View artwork: ${artwork.title}`}>
-                <img src={artwork.src} alt={artwork.alt} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+                <ArtworkImage
+                  artwork={artwork}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  imageErrors={imageErrors}
+                  onImageError={markImageError}
+                />
               </button>
               <div>
                 <span>{artwork.number}</span>
@@ -155,7 +219,7 @@ function Graphics() {
             }
           }}
         >
-          <div className="graphics-viewer__panel">
+          <div className="graphics-viewer__panel" ref={viewerPanelRef}>
             <header className="graphics-viewer__bar">
               <div>
                 <p className="graphics-kicker">{activeArtwork.label}</p>
@@ -166,7 +230,7 @@ function Graphics() {
               </button>
             </header>
             <figure>
-              <img src={activeArtwork.src} alt={activeArtwork.alt} />
+              <ArtworkImage artwork={activeArtwork} imageErrors={imageErrors} onImageError={markImageError} />
             </figure>
             <footer className="graphics-viewer__nav" aria-label="Artwork viewer navigation">
               <button type="button" onClick={showPrevious}>

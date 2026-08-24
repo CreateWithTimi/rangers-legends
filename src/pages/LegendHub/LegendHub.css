@@ -546,7 +546,19 @@
     grid-template-columns: 1fr;
   }
 
+  .legend-hero,
+  .legend-hero__copy,
   .legend-hero__image {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .legend-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .legend-hero__image {
+    width: 100%;
     aspect-ratio: 4 / 3;
   }
 
@@ -581,8 +593,33 @@
     grid-template-columns: 1fr;
   }
 
-  .legend-hero__image,
+  .legend-story__layout {
+    gap: var(--space-4);
+  }
+
   .legend-story__lead,
+  .legend-mini-feature .legend-image-frame {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+
+  .legend-story__lead img,
+  .legend-mini-feature img {
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .legend-mini-feature {
+    gap: var(--space-3);
+  }
+
+  .legend-mini-feature .legend-image-frame {
+    max-width: 560px;
+  }
+
+  .legend-hero__image,
   .legend-graphics__lead,
   .legend-film__frame {
     min-height: 320px;

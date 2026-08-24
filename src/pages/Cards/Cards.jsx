@@ -11,7 +11,22 @@ const experienceLinks = [
   { label: 'Collect It.', href: `/legends/${christianChukwu.slug}/cards`, active: true },
 ];
 
-function CardFigure({ card, flipped, buttonLabel, onFlip, loading = 'lazy' }) {
+function CardArtwork({ src, alt, loading = 'lazy', errored, onError }) {
+  if (errored) {
+    return (
+      <span className="card-artwork-fallback" role="img" aria-label={alt}>
+        Artwork unavailable
+      </span>
+    );
+  }
+
+  return <img src={src} alt={alt} loading={loading} decoding="async" onError={onError} />;
+}
+
+function CardFigure({ card, flipped, buttonLabel, onFlip, loading = 'lazy', imageErrors, onImageError }) {
+  const frontErrorKey = `${card.id}-front`;
+  const backErrorKey = `${card.id}-back`;
+
   return (
     <button
       className={flipped ? 'card-figure card-figure--flipped' : 'card-figure'}
@@ -21,10 +36,22 @@ function CardFigure({ card, flipped, buttonLabel, onFlip, loading = 'lazy' }) {
     >
       <span className="card-figure__inner">
         <span className="card-figure__face card-figure__face--front">
-          <img src={card.front} alt={card.frontAlt} loading={loading} decoding="async" />
+          <CardArtwork
+            src={card.front}
+            alt={card.frontAlt}
+            loading={loading}
+            errored={imageErrors[frontErrorKey]}
+            onError={() => onImageError(frontErrorKey)}
+          />
         </span>
         <span className="card-figure__face card-figure__face--back">
-          <img src={card.back} alt={card.backAlt} loading="lazy" decoding="async" />
+          <CardArtwork
+            src={card.back}
+            alt={card.backAlt}
+            loading="lazy"
+            errored={imageErrors[backErrorKey]}
+            onError={() => onImageError(backErrorKey)}
+          />
         </span>
       </span>
     </button>
@@ -35,6 +62,7 @@ function Cards() {
   const cards = christianChukwu.cards;
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [imageErrors, setImageErrors] = useState({});
   const selectedCard = cards[selectedIndex];
   const sideLabel = isFlipped ? 'Back' : 'Front';
   const progressLabel = `Card ${String(selectedIndex + 1).padStart(2, '0')} of ${String(cards.length).padStart(2, '0')}`;
@@ -66,6 +94,10 @@ function Cards() {
 
   function toggleFlip() {
     setIsFlipped((current) => !current);
+  }
+
+  function markImageError(key) {
+    setImageErrors((current) => (current[key] ? current : { ...current, [key]: true }));
   }
 
   useEffect(() => {
@@ -131,7 +163,13 @@ function Cards() {
               key={card.id}
               aria-label={`Inspect ${card.number} ${card.displayTitle}`}
             >
-              <img src={card.front} alt={card.frontAlt} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+              <CardArtwork
+                src={card.front}
+                alt={card.frontAlt}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                errored={imageErrors[`${card.id}-front`]}
+                onError={() => markImageError(`${card.id}-front`)}
+              />
               <span>{card.number}</span>
             </button>
           ))}
@@ -169,6 +207,8 @@ function Cards() {
             buttonLabel={`Flip ${selectedCard.number} to ${isFlipped ? 'front' : 'back'}`}
             onFlip={toggleFlip}
             loading="eager"
+            imageErrors={imageErrors}
+            onImageError={markImageError}
           />
         </div>
 
@@ -193,7 +233,12 @@ function Cards() {
         <div className="complete-collection__grid">
           {cards.map((card) => (
             <article className="complete-card" key={card.id}>
-              <img src={card.front} alt={card.frontAlt} loading="lazy" decoding="async" />
+              <CardArtwork
+                src={card.front}
+                alt={card.frontAlt}
+                errored={imageErrors[`${card.id}-front`]}
+                onError={() => markImageError(`${card.id}-front`)}
+              />
               <div>
                 <span>{card.number}</span>
                 <h3>{card.displayTitle}</h3>

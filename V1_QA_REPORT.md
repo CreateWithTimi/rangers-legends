@@ -533,3 +533,49 @@ Legend Hub archive navigation - RESOLVED.
 - Existing Overview, Story, Film, Graphics, Apparel, and Cards archive navigation now scrolls smoothly to sections.
 - Active section state is indicated with IntersectionObserver.
 - Small-screen behavior remains horizontal/compact rather than becoming a dense second navbar.
+
+## Milestone 11.4 Accessibility + Resilience Resolution
+
+Confirmed issues.
+
+- Graphics artwork viewer had dialog semantics, Escape close, arrow navigation, backdrop close, body scroll lock, and focus return, but did not fully trap Tab / Shift+Tab inside the open dialog.
+- Comic Reader fullscreen controls used `requestFullscreen()` / `exitFullscreen()` without handling rejected promises.
+- Cards front/back artwork is interaction-critical; failed card images could leave broken image UI inside the flip frame, opening fan, or complete collection.
+- Graphics artwork is interaction-critical; failed gallery/viewer images could leave broken image UI inside the exhibition and modal.
+
+Resolved issues.
+
+- Added a lightweight focus trap to the Graphics viewer so Tab and Shift+Tab cycle through dialog controls while the modal is open.
+- Preserved Graphics viewer Escape close, Arrow Left/Right navigation, backdrop close, body scroll lock, and focus return to the opening trigger.
+- Wrapped Comic Reader fullscreen enter/exit calls in safe async error handling. If fullscreen is unsupported or rejected, the reader remains usable and local state is re-synced from `document.fullscreenElement`.
+- Added stable, non-invented `Artwork unavailable` fallback frames for Graphics gallery/viewer images.
+- Added stable, non-invented `Artwork unavailable` fallback frames for Cards opening fan, focused front/back flip faces, and complete collection fronts.
+- Preserved Cards flip geometry and card aspect ratio when a front/back image fails.
+
+Already-resolved findings.
+
+- Global mobile menu retains aria-expanded / aria-controls, Escape close, close-button close, link-close behavior, focus containment, focus restore, body scroll lock, 100dvh panel sizing, and internal menu scrolling.
+- Comic Reader fullscreen state was already synchronized with `fullscreenchange` and cleaned up on unmount.
+- Comic Reader already had page-level image error handling.
+- Legend Hub archive navigation already respects reduced motion when smooth scrolling is not appropriate.
+- Unknown routes already resolve to the NotFound route.
+- Source inspection still shows no `console.log`, `TODO`, or `FIXME` patterns in application source.
+
+Not applicable / intentionally unchanged.
+
+- Passive marketing images on Home, Legends, Legend Hub, Film, and Apparel were not given broad visible error states in this pass because the confirmed high-risk resilience gaps were in interactive artwork surfaces.
+- No app-level error boundary was added; it remains future resilience debt.
+- No semantic heading or visible typography changes were needed.
+- No navigation, route, copy, media optimization, artwork cleanup, SEO, or page layout changes were made.
+
+Remaining accessibility debt.
+
+- Final browser QA should verify Graphics modal Tab / Shift+Tab containment, Escape close, focus return, and mobile reachability.
+- Final browser QA should verify Cards keyboard navigation and flip focus behavior with both normal and reduced-motion preferences.
+- Embedded text inside concept artwork remains inaccessible as text; essential page UI copy remains available in HTML.
+
+Remaining resilience debt.
+
+- Passive page imagery outside Graphics/Cards does not yet have a shared fallback component.
+- No app-level error boundary exists.
+- Fullscreen availability and permission behavior should be manually checked in the final target browser.
