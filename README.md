@@ -1,35 +1,53 @@
 # Rangers Legends
 
-Rangers Legends is a React/Vite digital storytelling and archive platform for celebrating the players, moments, stories, and cultural legacy of Rangers International F.C.
+Rangers Legends is an evolving multi-format storytelling and archive concept exploring football history through connected digital and physical experiences.
 
-The first collection centers on `LEGEND 001`: Christian Chukwu, "Chairman". The app architecture is designed so future legends can be added mainly through new data and approved assets, not by rebuilding the site.
+The platform is designed as a scalable archive for Rangers International F.C. legends. V1 focuses on:
 
-## Current Milestone
+```text
+LEGEND 001
+CHRISTIAN CHUKWU - "CHAIRMAN"
+```
 
-This repository currently contains the first implementation foundation only:
+This project is a concept/demo experience. It is not an official Rangers International F.C. website, official archive, licensed merchandise program, or announced commercial partnership.
 
-- Vite + React + JavaScript scaffold
-- React Router route structure for V1 pages
-- Canonical `PROJECT_BRIEF.md`
-- Initial design tokens, reset, and global CSS
-- Shared layout with `SiteHeader` and `SiteFooter`
-- Simple responsive Home page skeleton
-- Placeholder V1 routes with no invented history or assets
+## Current V1 Experiences
 
-Detailed visual implementation, real assets, ecommerce, authentication, backend, CMS, and advanced interactions are intentionally out of scope for this milestone.
+- Home
+- Legends Directory
+- Legend 001 Hub
+- Comic Reader
+- Film / Coming Soon
+- Graphics Gallery
+- Apparel Lookbook
+- Cards Collector Archive
 
-## Setup
+## Tech Stack
+
+- Vite
+- React
+- React Router
+- JavaScript
+- Modern plain CSS
+
+No backend, CMS, ecommerce, authentication, payments, or external state-management layer is included in V1.
+
+## Local Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Scripts
+Build the project with:
 
 ```bash
-npm run dev
 npm run build
+```
+
+Preview the production build locally with:
+
+```bash
 npm run preview
 ```
 
@@ -41,11 +59,14 @@ src/
     global/
     legends/
       christian-chukwu/
-        comic/
-        graphics/
         apparel/
         cards/
-        film/
+        collection/
+        comic/
+        covers/
+        graphics/
+        hero/
+        optimized/
   components/
     layout/
     navigation/
@@ -56,6 +77,7 @@ src/
   data/
     legends/
       christian-chukwu.js
+      index.js
     site.js
   pages/
     Home/
@@ -76,9 +98,29 @@ src/
   main.jsx
 ```
 
-## Development Notes
+## Content And Asset Status
 
-- Treat `PROJECT_BRIEF.md` as the canonical product, design, and content specification.
-- Do not invent historical facts, quotes, scores, dates, product details, prices, or official partnerships.
-- Use approved assets only. Missing assets should render as clearly labeled placeholders.
-- Keep the frontend simple, readable, responsive, and beginner-friendly.
+`PROJECT_BRIEF.md` is the canonical product, design, and content specification.
+
+`ASSET_MANIFEST.md` tracks supplied media and cleanup status. Current concept artwork may contain generated or provisional visual elements, including crest-like marks, generated typography, embedded historical-looking text, and product-detail-looking labels. Those elements are treated as concept artwork only and should not be treated as verified historical claims, licensed brand assets, or final production merchandise details.
+
+Do not invent historical facts, scores, quotes, product specifications, prices, release dates, official approvals, or partnership language.
+
+## Deployment Note
+
+The app uses React Router with nested client-side routes such as:
+
+- `/legends/christian-chukwu`
+- `/legends/christian-chukwu/story`
+- `/legends/christian-chukwu/film`
+- `/legends/christian-chukwu/graphics`
+- `/legends/christian-chukwu/apparel`
+- `/legends/christian-chukwu/cards`
+
+No hosting provider configuration is currently present in the repository. When a hosting target is selected, configure that provider to serve `dist/index.html` for direct requests to nested routes so browser refreshes do not produce hosting-level 404s.
+
+Do not switch the app to `HashRouter` solely to avoid hosting configuration.
+
+## Project Status
+
+V1 concept/demo. Legend 001 feature development is complete for controlled demo review. Remaining public-readiness work is tracked in `V1_QA_REPORT.md`.

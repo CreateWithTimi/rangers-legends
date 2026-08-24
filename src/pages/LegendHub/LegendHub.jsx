@@ -1,14 +1,15 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import christianChukwu from '../../data/legends/christian-chukwu.js';
 import './LegendHub.css';
 
 const archiveLinks = [
-  { label: 'Overview', href: '#overview' },
-  { label: 'Story', href: '#story' },
-  { label: 'Film', href: '#film' },
-  { label: 'Graphics', href: '#graphics' },
-  { label: 'Apparel', href: '#apparel' },
-  { label: 'Cards', href: '#cards' },
+  { label: 'Overview', id: 'overview' },
+  { label: 'Story', id: 'story' },
+  { label: 'Film', id: 'film' },
+  { label: 'Graphics', id: 'graphics' },
+  { label: 'Apparel', id: 'apparel' },
+  { label: 'Cards', id: 'cards' },
 ];
 
 const routeLinks = {
@@ -65,6 +66,54 @@ function ImageFrame({ className = '', src, alt, loading = 'lazy' }) {
 function LegendHub() {
   const storyImages = christianChukwu.assets.hubStoryPreview;
   const graphics = christianChukwu.graphics.filter((graphic) => graphic.src);
+  const [activeSection, setActiveSection] = useState(archiveLinks[0].id);
+
+  function handleArchiveLinkClick(event, id) {
+    event.preventDefault();
+
+    const section = document.getElementById(id);
+
+    if (!section) {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    section.scrollIntoView({
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  }
+
+  useEffect(() => {
+    const sections = archiveLinks
+      .map((link) => document.getElementById(link.id))
+      .filter(Boolean);
+
+    if (!sections.length) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry) {
+          setActiveSection(visibleEntry.target.id);
+        }
+      },
+      {
+        rootMargin: '-28% 0px -58% 0px',
+        threshold: [0.12, 0.28, 0.48],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="legend-hub">
@@ -106,7 +155,13 @@ function LegendHub() {
 
       <nav className="legend-archive-nav legend-shell" aria-label="Legend archive navigation">
         {archiveLinks.map((link) => (
-          <a href={link.href} key={link.href}>
+          <a
+            className={activeSection === link.id ? 'legend-archive-nav__link legend-archive-nav__link--active' : 'legend-archive-nav__link'}
+            href={`#${link.id}`}
+            key={link.id}
+            onClick={(event) => handleArchiveLinkClick(event, link.id)}
+            aria-current={activeSection === link.id ? 'true' : undefined}
+          >
             {link.label}
           </a>
         ))}

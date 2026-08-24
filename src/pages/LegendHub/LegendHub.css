@@ -10,6 +10,7 @@
 
 .legend-rule {
   border-top: var(--border-subtle);
+  scroll-margin-top: 150px;
 }
 
 .legend-kicker,
@@ -134,6 +135,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition:
+    opacity 180ms ease,
+    transform 220ms ease;
+}
+
+.legend-image-frame:hover img,
+.legend-mini-feature:hover .legend-image-frame img,
+.legend-garment:hover .legend-image-frame img {
+  transform: scale(1.025);
 }
 
 .legend-hero__image img {
@@ -152,7 +162,8 @@
   backdrop-filter: blur(14px);
 }
 
-.legend-archive-nav a {
+.legend-archive-nav__link {
+  position: relative;
   min-height: 40px;
   display: inline-flex;
   align-items: center;
@@ -161,10 +172,36 @@
   font-weight: 900;
   text-decoration: none;
   text-transform: uppercase;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
 }
 
-.legend-archive-nav a:hover {
+.legend-archive-nav__link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0.35rem;
+  left: 0;
+  height: 1px;
+  background: var(--color-red);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transform-origin: left;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.legend-archive-nav__link:hover,
+.legend-archive-nav__link--active {
   color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+.legend-archive-nav__link--active::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .legend-section-header {
@@ -424,6 +461,14 @@
   padding: var(--space-3);
   background: var(--color-surface);
   transform: translateX(calc(var(--card-index) * -1.35rem)) rotate(calc((var(--card-index) - 2) * 1.8deg));
+  transition:
+    border-color 160ms ease,
+    transform 180ms ease;
+}
+
+.legend-card-preview:hover {
+  border-color: var(--color-gold);
+  transform: translateX(calc(var(--card-index) * -1.35rem)) translateY(-0.35rem) rotate(calc((var(--card-index) - 2) * 1.8deg));
 }
 
 .legend-card-preview img {
@@ -522,6 +567,8 @@
   .legend-archive-nav {
     position: static;
     overflow-x: auto;
+    gap: var(--space-5);
+    padding-inline: var(--container-padding);
   }
 
   .legend-section-header {
@@ -568,8 +615,17 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .legend-archive-nav a,
-  .legend-image-frame {
+  .legend-archive-nav__link,
+  .legend-archive-nav__link::after,
+  .legend-image-frame,
+  .legend-image-frame img,
+  .legend-card-preview {
     transition: none;
+  }
+
+  .legend-image-frame:hover img,
+  .legend-mini-feature:hover .legend-image-frame img,
+  .legend-garment:hover .legend-image-frame img {
+    transform: none;
   }
 }

@@ -1,0 +1,216 @@
+.legends-page {
+  overflow: hidden;
+}
+
+.legends-shell {
+  width: min(100%, 1360px);
+  margin-inline: auto;
+  padding: var(--space-8) var(--container-padding);
+}
+
+.legends-rule {
+  border-top: var(--border-subtle);
+}
+
+.legends-kicker,
+.legends-feature__meta dt,
+.legends-future__card span {
+  color: var(--color-gold);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.legends-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(280px, 4fr);
+  gap: var(--space-6);
+  align-items: end;
+}
+
+.legends-hero h1,
+.legends-feature h2,
+.legends-future h2 {
+  color: var(--color-cream);
+  font-family: var(--font-display);
+  line-height: 0.84;
+  text-transform: uppercase;
+}
+
+.legends-hero h1 {
+  max-width: 8ch;
+  margin-top: var(--space-3);
+  font-size: clamp(4.8rem, 12vw, 12rem);
+}
+
+.legends-hero h1 span,
+.legends-feature h2 span {
+  display: block;
+  color: var(--color-red);
+}
+
+.legends-hero__copy {
+  max-width: 560px;
+  color: var(--color-white);
+  font-size: 1.08rem;
+}
+
+.legends-hero__copy p + p {
+  margin-top: var(--space-4);
+  color: var(--color-muted);
+}
+
+.legends-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 6.8fr) minmax(300px, 4.2fr);
+  gap: var(--space-6);
+  align-items: stretch;
+}
+
+.legends-feature__media {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+  border: var(--border-subtle);
+  background: var(--color-surface);
+}
+
+.legends-feature__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(11, 13, 12, 0.32), transparent 42%),
+    radial-gradient(rgba(229, 210, 173, 0.1) 1px, transparent 1px);
+  background-size: auto, 5px 5px;
+}
+
+.legends-feature__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% 22%;
+}
+
+.legends-feature__copy {
+  display: grid;
+  align-content: center;
+}
+
+.legends-feature h2 {
+  max-width: 7ch;
+  margin-top: var(--space-3);
+  font-size: clamp(4rem, 8vw, 8.5rem);
+}
+
+.legends-feature__nickname {
+  color: var(--color-red);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.legends-feature__line {
+  max-width: 11ch;
+  margin-top: var(--space-4);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3.6rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.legends-feature__meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-block: var(--space-6);
+}
+
+.legends-feature__meta div {
+  border-top: var(--border-subtle);
+  padding-top: var(--space-3);
+}
+
+.legends-feature__meta dd {
+  margin: 0;
+  color: var(--color-cream);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.8vw, 2.8rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.legends-future {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(300px, 6fr);
+  gap: var(--space-6);
+  align-items: end;
+}
+
+.legends-future h2 {
+  max-width: 8ch;
+  margin-top: var(--space-3);
+  font-size: clamp(3rem, 7vw, 7rem);
+}
+
+.legends-future__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.legends-future__card {
+  min-height: 260px;
+  display: grid;
+  align-content: space-between;
+  border: var(--border-subtle);
+  padding: var(--space-5);
+  background:
+    linear-gradient(135deg, rgba(24, 58, 45, 0.36), transparent 52%),
+    rgba(18, 21, 19, 0.72);
+}
+
+.legends-future__card strong {
+  color: var(--color-muted);
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .legends-hero,
+  .legends-feature,
+  .legends-future {
+    grid-template-columns: 1fr;
+  }
+
+  .legends-feature__media {
+    min-height: 440px;
+  }
+}
+
+@media (max-width: 768px) {
+  .legends-shell {
+    padding-block: var(--space-7);
+  }
+
+  .legends-hero h1,
+  .legends-feature h2,
+  .legends-future h2 {
+    max-width: none;
+    font-size: clamp(3.6rem, 18vw, 6rem);
+  }
+
+  .legends-feature__media {
+    min-height: 360px;
+  }
+
+  .legends-future__grid,
+  .legends-feature__meta {
+    grid-template-columns: 1fr;
+  }
+}
