@@ -579,3 +579,52 @@ Remaining resilience debt.
 - Passive page imagery outside Graphics/Cards does not yet have a shared fallback component.
 - No app-level error boundary exists.
 - Fullscreen availability and permission behavior should be manually checked in the final target browser.
+
+## Milestone 11.5 SEO + Shareability Resolution
+
+Default metadata.
+
+- Default title is now `Rangers Legends — The Stories Behind the Shirt`.
+- Default description is now: `An evolving storytelling archive celebrating the players, moments and stories that shaped Rangers International F.C.`
+- `index.html` now includes `robots`, `theme-color`, Open Graph, and Twitter/X text metadata.
+
+Route-aware metadata.
+
+- Added a lightweight client-side `RouteMetadata` component for completed routes.
+- Route changes now update `document.title`, `meta[name="description"]`, `meta[name="robots"]`, `og:title`, `og:description`, `twitter:title`, and `twitter:description`.
+- Unknown routes receive `Page Not Found — Rangers Legends` and route-level `noindex, follow`.
+
+Open Graph status.
+
+- Added `og:type`, `og:site_name`, `og:title`, and `og:description`.
+- `og:url` is intentionally pending until the deployment origin is known.
+- `og:image` is intentionally pending because current visible artwork remains `NEEDS CLEANUP` and no final public-safe social preview image has been approved.
+
+Twitter/X status.
+
+- Added `twitter:card` as `summary`.
+- Added `twitter:title` and `twitter:description`.
+- `twitter:image` is intentionally pending for the same reason as `og:image`.
+- No creator account was added.
+
+Favicon status.
+
+- Pending. No safe standalone Rangers Legends identity asset exists in the repository, and no crest-like artwork was extracted or invented.
+
+Canonical status.
+
+- Pending deployment URL. No canonical URL or production domain was invented.
+
+Structured data status.
+
+- Skipped for V1. SportsTeam, Person, Product, Offer, Movie, and Organization schema would be risky or misleading for this concept/demo state.
+
+Remaining deployment-dependent tasks.
+
+- Select production origin.
+- Configure SPA fallback for nested React Router routes.
+- Add canonical URLs and `og:url`.
+- Approve or create a rights-safe 1200 x 630 social preview image.
+- Add absolute social image URLs after deployment origin exists.
+- Add a safe favicon/app icon if approved identity artwork is supplied.
+- Add sitemap / robots hosting details only after the production hostname is known.

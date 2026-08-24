@@ -101,10 +101,6 @@ function Cards() {
   }
 
   useEffect(() => {
-    document.title = `Cards | ${christianChukwu.name} | Rangers Legends`;
-  }, []);
-
-  useEffect(() => {
     const handleKeyDown = (event) => {
       const target = event.target;
       const isEditable =

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import christianChukwu from '../../data/legends/christian-chukwu.js';
 import './Apparel.css';
@@ -30,10 +29,6 @@ function ApparelLook({ item, reverse = false, loading = 'lazy' }) {
 
 function Apparel() {
   const [tee01, tee02, tee03] = christianChukwu.apparel;
-
-  useEffect(() => {
-    document.title = `Apparel | ${christianChukwu.name} | Rangers Legends`;
-  }, []);
 
   return (
     <div className="apparel-page">

@@ -76,10 +76,6 @@ function ComicReader() {
   }
 
   useEffect(() => {
-    document.title = `${pageLabel} - Christian Chukwu Comic | Rangers Legends`;
-  }, [pageLabel]);
-
-  useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 900px)');
     const handleChange = () => setIsCompact(mediaQuery.matches);
 

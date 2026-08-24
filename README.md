@@ -123,6 +123,16 @@ No hosting provider configuration is currently present in the repository. When a
 
 Do not switch the app to `HashRouter` solely to avoid hosting configuration.
 
+## Deployment Metadata Checklist
+
+After a hosting URL is selected, finalize the domain-dependent metadata:
+
+- Add canonical URL handling for the production origin.
+- Add `og:url` values for shared pages.
+- Use absolute `og:image` / `twitter:image` URLs if a public-safe social preview image is approved.
+- Add a favicon only when a safe Rangers Legends identity asset is available.
+- Add sitemap / robots hosting details only after the production hostname is known.
+
 ## Project Status
 
 V1 concept/demo. Legend 001 feature development is complete for controlled demo review. Remaining public-readiness work is tracked in `V1_QA_REPORT.md`.

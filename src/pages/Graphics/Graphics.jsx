@@ -64,10 +64,6 @@ function Graphics() {
   }
 
   useEffect(() => {
-    document.title = `Graphics | ${christianChukwu.name} | Rangers Legends`;
-  }, []);
-
-  useEffect(() => {
     if (activeIndex === null) {
       lastTriggerRef.current?.focus();
       return undefined;
