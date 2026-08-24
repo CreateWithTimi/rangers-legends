@@ -434,6 +434,68 @@ Count: 7.
 - Set route-aware titles/descriptions.
 - Prepare public-safe social preview image and description.
 
+## Milestone 11.3 Performance Resolution
+
+Baseline build - BEFORE.
+
+- Emitted media weight: 60.40 MB.
+- JavaScript: 279.49 KB.
+- CSS: 63.23 KB.
+- Largest emitted assets were the eight comic PNGs, each about 3.57-3.78 MB, followed by the collection hero at 2.74 MB and Chairman graphic at 2.23 MB.
+
+Optimized build - AFTER.
+
+- Emitted media weight: 16.48 MB.
+- JavaScript: 279.33 KB.
+- CSS: 63.23 KB.
+- Approximate media saved: 43.92 MB.
+- Approximate media reduction: 72.7%.
+
+Optimization strategy.
+
+- Original supplied PNG artwork was preserved.
+- No WebP or AVIF encoder was available locally; `sips` could not write WebP in this environment.
+- Conservative high-quality JPEG production derivatives were created under `src/assets/legends/christian-chukwu/optimized/`.
+- The central Legend 001 data model now imports production derivatives instead of full original/source PNGs.
+- Existing page layouts, object positions, routes, interactions, and loading behavior were preserved.
+
+Asset families optimized.
+
+- Comic Reader: comic-page-01 through comic-page-08 now use `optimized/comic/*-reader.jpg` derivatives at the original 1024 x 1536 dimensions.
+- Cards: C01-C05 fronts and backs now use `optimized/cards/*.jpg` derivatives while preserving each card's source dimensions and ratio.
+- Graphics: Chairman, Kaduna 1977, and African Champions derivatives now use JPEG production files.
+- Apparel: TEE 01-03 optimized derivatives now use JPEG production files.
+- Hero / Film / Story / Collection media: shared preview and collection derivatives now use JPEG production files.
+
+Largest remaining production assets.
+
+- Comic page 07 reader: 1.08 MB.
+- Comic page 08 reader: 1.08 MB.
+- Comic page 06 reader: 1.07 MB.
+- Comic page 04 reader: 1.05 MB.
+- Comic page 05 reader: 1.05 MB.
+- Comic page 01 reader: 1.03 MB.
+- Comic page 02 reader: 1.02 MB.
+- Comic page 03 reader: 0.99 MB.
+- Collection hero: 0.64 MB.
+- Chairman graphic: 0.57 MB.
+
+Remaining performance debt.
+
+- No responsive `srcset` / `sizes` strategy yet.
+- No AVIF/WebP pipeline yet.
+- Comic pages remain the largest files because lettering/readability is more important than aggressive compression.
+- The shared data module still imports all Legend 001 asset URLs centrally.
+- Future media work should evaluate route-level code splitting only if V1 grows further.
+
+Assets requiring visual verification.
+
+- Comic lettering on all eight reader pages.
+- Card back typography after JPEG conversion.
+- Apparel board embedded typography.
+- Graphics modal detail.
+- Hero/Chairman texture and contrast.
+
 ## Milestone 11.1 Resolution
 
 README - RESOLVED.

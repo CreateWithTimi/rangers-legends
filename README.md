@@ -104,6 +104,8 @@ src/
 
 `ASSET_MANIFEST.md` tracks supplied media and cleanup status. Current concept artwork may contain generated or provisional visual elements, including crest-like marks, generated typography, embedded historical-looking text, and product-detail-looking labels. Those elements are treated as concept artwork only and should not be treated as verified historical claims, licensed brand assets, or final production merchandise details.
 
+Original supplied artwork is preserved in the source asset folders. The application uses non-destructive optimized derivatives from `src/assets/legends/christian-chukwu/optimized/` where practical so the controlled demo can load substantially less media without altering the approved page compositions.
+
 Do not invent historical facts, scores, quotes, product specifications, prices, release dates, official approvals, or partnership language.
 
 ## Deployment Note
