@@ -2,6 +2,14 @@
 
 This manifest tracks approved or placeholder media so future work does not guess which assets are safe to use.
 
+## Global / Platform
+
+### Social Preview
+
+| Asset | File | Status | Used On | Notes |
+| --- | --- | --- | --- | --- |
+| Rangers Legends social preview | `public/rangers-legends-og.jpg` | APPROVED | Open Graph / Twitter social preview | Supplied and approved final public-facing social preview artwork. Confirmed file dimensions: 1728 x 910. Used without alteration. |
+
 ## Legend 001 — Christian Chukwu
 
 ### Hero

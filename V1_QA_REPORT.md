@@ -628,3 +628,40 @@ Remaining deployment-dependent tasks.
 - Add absolute social image URLs after deployment origin exists.
 - Add a safe favicon/app icon if approved identity artwork is supplied.
 - Add sitemap / robots hosting details only after the production hostname is known.
+
+## Milestone 11.6 — Social Preview + Deployment Readiness
+
+Approved OG asset.
+
+- Added the supplied public-facing social preview asset at `public/rangers-legends-og.jpg`.
+- The file was copied without alteration.
+- Confirmed dimensions are 1728 x 910. The file was supplied as the approved final social preview artwork, but it is not exactly 1200 x 630.
+
+Metadata implementation.
+
+- Route metadata now supports one shared V1 social preview image across completed routes.
+- Added `og:image`, `og:image:width`, `og:image:height`, `og:image:alt`, `twitter:image`, and `twitter:image:alt` when `VITE_SITE_URL` is available.
+- `twitter:card` is now `summary_large_image`.
+- Static `index.html` keeps safe text fallback metadata without inventing absolute URLs.
+- A Vite `transformIndexHtml` hook injects absolute `og:image` / `twitter:image` tags into the built initial HTML only when `VITE_SITE_URL` is available.
+
+Environment-variable strategy.
+
+- `VITE_SITE_URL` is the deployment origin source of truth.
+- The value is normalized by removing trailing slashes.
+- If `VITE_SITE_URL` is absent, canonical, `og:url`, `og:image`, and `twitter:image` are not emitted as fake production URLs.
+
+Canonical strategy.
+
+- Canonical URLs and `og:url` are route-aware when `VITE_SITE_URL` exists.
+- Unknown routes receive no canonical URL and continue to use route-level `noindex, follow`.
+
+Remaining favicon debt.
+
+- Favicon remains pending. No approved standalone Rangers Legends icon exists, and no crest-like artwork was extracted or invented.
+
+Deployment status.
+
+- Deployment is still pending.
+- React Router nested routes still require the selected host to serve `dist/index.html` for direct route requests.
+- Build passed after integration.

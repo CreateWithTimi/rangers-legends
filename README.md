@@ -125,11 +125,16 @@ Do not switch the app to `HashRouter` solely to avoid hosting configuration.
 
 ## Deployment Metadata Checklist
 
-After a hosting URL is selected, finalize the domain-dependent metadata:
+Set `VITE_SITE_URL` to the final public origin when building for deployment:
 
-- Add canonical URL handling for the production origin.
-- Add `og:url` values for shared pages.
-- Use absolute `og:image` / `twitter:image` URLs if a public-safe social preview image is approved.
+```bash
+VITE_SITE_URL=<production-origin> npm run build
+```
+
+Use the origin only, without a trailing slash. The app uses this value to create route-aware canonical URLs and `og:url` values in the client metadata layer, and to inject absolute `og:image` / `twitter:image` tags into the built `index.html`. If `VITE_SITE_URL` is absent during local development, the app does not emit fake production URLs.
+
+After a hosting URL is selected, finalize the remaining domain-dependent metadata:
+
 - Add a favicon only when a safe Rangers Legends identity asset is available.
 - Add sitemap / robots hosting details only after the production hostname is known.
 
