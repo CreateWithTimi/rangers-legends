@@ -108,7 +108,18 @@ Original supplied artwork is preserved in the source asset folders. The applicat
 
 Do not invent historical facts, scores, quotes, product specifications, prices, release dates, official approvals, or partnership language.
 
-## Deployment Note
+## Vercel Deployment
+
+Deployment target:
+
+```text
+Vercel
+Repository: CreateWithTimi/rangers-legends
+Framework: Vite
+Install command: npm install
+Build command: npm run build
+Output directory: dist
+```
 
 The app uses React Router with nested client-side routes such as:
 
@@ -119,24 +130,39 @@ The app uses React Router with nested client-side routes such as:
 - `/legends/christian-chukwu/apparel`
 - `/legends/christian-chukwu/cards`
 
-No hosting provider configuration is currently present in the repository. When a hosting target is selected, configure that provider to serve `dist/index.html` for direct requests to nested routes so browser refreshes do not produce hosting-level 404s.
+`vercel.json` rewrites route requests to `dist/index.html` so direct opens and browser refreshes on nested React Router routes resolve through the SPA. Static files in `public/`, including `/rangers-legends-og.jpg`, remain directly addressable after deployment.
 
 Do not switch the app to `HashRouter` solely to avoid hosting configuration.
 
 ## Deployment Metadata Checklist
 
-Set `VITE_SITE_URL` to the final public origin when building for deployment:
+The first deployment can be created without `VITE_SITE_URL`. After Vercel provides the final stable production origin, set:
 
-```bash
-VITE_SITE_URL=<production-origin> npm run build
+```text
+VITE_SITE_URL=<production-origin>
 ```
 
-Use the origin only, without a trailing slash. The app uses this value to create route-aware canonical URLs and `og:url` values in the client metadata layer, and to inject absolute `og:image` / `twitter:image` tags into the built `index.html`. If `VITE_SITE_URL` is absent during local development, the app does not emit fake production URLs.
+Use the origin only, without a trailing slash. Then redeploy so the production build can finalize route-aware canonical URLs, `og:url`, absolute `og:image`, and absolute `twitter:image` values. If `VITE_SITE_URL` is absent during local development or the initial deployment, the app does not emit fake production URLs.
 
 After a hosting URL is selected, finalize the remaining domain-dependent metadata:
 
 - Add a favicon only when a safe Rangers Legends identity asset is available.
 - Add sitemap / robots hosting details only after the production hostname is known.
+
+## Post-Deployment QA
+
+After the final deployment and `VITE_SITE_URL` redeploy, verify these routes by direct URL open, browser refresh, in-site navigation, and mobile menu navigation where applicable:
+
+- `/`
+- `/legends`
+- `/legends/christian-chukwu`
+- `/legends/christian-chukwu/story`
+- `/legends/christian-chukwu/film`
+- `/legends/christian-chukwu/graphics`
+- `/legends/christian-chukwu/apparel`
+- `/legends/christian-chukwu/cards`
+
+Also verify page source and social previews for canonical URL, `og:url`, absolute `og:image`, and absolute `twitter:image` in WhatsApp, X, LinkedIn, and Discord.
 
 ## Project Status
 
